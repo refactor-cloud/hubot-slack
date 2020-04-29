@@ -11,3 +11,7 @@ jobs:
       script:
         # Lint the Dockerfile
         - docker run -it --rm -v "${PWD}/Dockerfile:/Dockerfile:ro" redcoolbeans/dockerlint
+    - stage: lint
+      script:
+        # Lint the Dockerfile
+        - docker run -it --rm --build-arg=HUBOT_VERSION="3.3.2" -v "${PWD}/custom.Dockerfile:/Dockerfile:ro" redcoolbeans/dockerlint
