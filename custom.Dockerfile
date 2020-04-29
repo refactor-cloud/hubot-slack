@@ -8,8 +8,7 @@
 # authors:  ranger_huang@yeah.net
 # ------------------------------------------------------
 
-ARG HUBOT_VERSION="3.3.2"
-FROM minddocdev/hubot:$HUBOT_VERSION
+FROM minddocdev/hubot
 
 LABEL maintainer="ranger_huang@yeah.net"
 
