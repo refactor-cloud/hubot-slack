@@ -42,6 +42,12 @@ ARG HUBOT_VERSION="3.3.2"
 RUN jq --arg HUBOT_VERSION "$HUBOT_VERSION" '.dependencies.hubot = $HUBOT_VERSION' package.json > /tmp/package.json\
  && mv /tmp/package.json .
 
+ARG TIME_ZONE="Asia/Shanghai"
+ENV TIME_ZONE=$TIME_ZONE
+RUN apk add tzdata && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "$TIME_ZONE" > /etc/timezone \
+    && apk del tzdata
+
 EXPOSE 80
 
 ENTRYPOINT ["./entrypoint.sh"]
