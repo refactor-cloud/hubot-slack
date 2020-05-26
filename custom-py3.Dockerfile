@@ -8,7 +8,7 @@
 # authors:  ranger_huang@yeah.net
 # ------------------------------------------------------
 
-FROM quay.io/refactorcloud/hubot-slack:v3.3.2-dev.1
+FROM quay.io/refactorcloud/hubot-slack:v3.3.2-beta.1-lts
 
 LABEL maintainer="ranger_huang@yeah.net"
 USER root
